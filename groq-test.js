@@ -1,0 +1,29 @@
+const path = require("path");
+
+require("dotenv").config({ path: path.join(__dirname, ".env") });
+
+const Groq = require("groq-sdk");
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+});
+
+async function testGroq() {
+  try {
+    const response = await groq.chat.completions.create({
+      model: "openai/gpt-oss-120b",
+      messages: [
+        {
+          role: "user",
+          content: "Reply with exactly: Groq is connected!",
+        },
+      ],
+    });
+
+    console.log(response.choices[0].message.content);
+  } catch (error) {
+    console.error("Groq connection failed:", error.message);
+  }
+}
+
+testGroq();

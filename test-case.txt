@@ -1,0 +1,7 @@
+Open https://phptravels.net/.
+Click the "I Understand & Continue" button on the demo notice.
+Click "Login" in the website navigation.
+Enter the email - 22011bc032@gmail.com and password - Suchi@123
+Click "Sign In to your account".
+Verify that the customer dashboard is displayed.
+Print PASS if the dashboard appears. Otherwise print FAIL.
